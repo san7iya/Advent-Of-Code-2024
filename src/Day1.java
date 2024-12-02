@@ -11,12 +11,9 @@ public class Day1 {
 
             String input;
             while ((input = file.readLine())!= null) {
-                if (input.isEmpty()) { 
-                    continue;
-                }
 
                 try {
-                    String[] s = input.split("\\s+");
+                    String[] s = input.split("   ");
 
                     for (int i = 0; i < s.length; i++) {
                         int num = Integer.parseInt(s[i]);
@@ -40,7 +37,7 @@ public class Day1 {
 
             //calculates the total distance between the two lists 
             int sum = 0;
-            for (int i = 0; i < Math.min(list1.size(), list2.size()); i++) {
+            for (int i = 0; i <list1.size(); i++) {
                 sum += Math.abs(list1.get(i) - list2.get(i));
             }
             
@@ -62,9 +59,9 @@ public class Day1 {
             System.out.printf("Similarity Score: %d\n", sim);
 
         } catch (FileNotFoundException e) {
-            System.out.println("Input file not found.");
+            System.out.println("File not found.");
         } catch (IOException e) {
-            System.out.println("Error reading the file.");
+            System.out.println("Error");
         }
     }
 }
